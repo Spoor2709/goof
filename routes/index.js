@@ -175,13 +175,13 @@ exports.create = function (req, res, next) {
   }).save(function (err, todo, count) {
     if (err) return next(err);
 
-    
+    /*
     res.setHeader('Data', todo.content.toString('base64'));
     res.redirect('/');
-    
+    */
 
     res.setHeader('Location', '/');
-    res.status(302).send(todo.content.toString('base64'));
+    res.status(302).send('this is a message');
 
     // res.redirect('/#' + todo.content.toString('base64'));
   });
